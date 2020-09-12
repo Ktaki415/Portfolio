@@ -10,6 +10,35 @@
   </head>
 
   <body>
+    <header class="navbar navbar-fixed-top navbar-inverse">
+      <div class="container">
+
+        <nav class="nav navbar-nav navbar-right">
+          <span>Anicode</span>
+        </nav>
+        <!-- headerここから -->
+        <nav>
+          <ul class="nav navbar-nav navbar-left">
+            <% if user_signed_in? %>
+              <li class="header_list"><%= link_to "Mypage", user_path(current_user) %></li>
+              <li class="header_list"><%= link_to "Users", users_path %></li>
+              <li class="header_list"><%= link_to "Posts", posts_path %></li>
+              <li class="header_list"><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+            <% else %>
+              <li class="header_list"><%= link_to "Top", root_path %></li>
+              <li class="header_list"><%= link_to "About", home_about_path %></li>
+              <li class="header_list"><%= link_to "SignUp", new_user_registration_path %></li>
+              <li class="header_list"><%= link_to "Login", new_user_session_path %></li>
+            <% end %>
+          </ul>
+        </nav>
+        <!-- headerここまで -->
+
+      </div>
+    </header>
+    <div class="container">
+      <p id="notice"><%= notice %></p>
     <%= yield %>
+    </div>
   </body>
 </html>

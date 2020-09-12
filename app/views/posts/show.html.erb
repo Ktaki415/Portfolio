@@ -1,0 +1,28 @@
+<div class="row">
+	<div class="col-xs-3">
+
+		<h2>User info</h2>
+		<%= render 'users/profile', user: @post.user %>
+
+		<h2>New post</h2>
+		<%= render 'posts/newform', post: @post_new %>
+
+	</div>
+
+	<div class="col-xs-9">
+		<h2>Post detail</h2>
+
+		<table class="table">
+				<tr>
+					<td>
+						<%= link_to user_path(@post.user) do %>
+							<%= attachment_image_tag(@post.user, :profile_image, :fill, 100, 100, fallback: "no-image-mini.jpg") %><br>
+							<%= @post.user.name %>
+						<% end %>
+					</td>
+					<td><%= link_to @post.title, post_path(@post) %></td>
+					<td><%= @post.body %></td>
+			<table>
+	</div>
+</div>
+
