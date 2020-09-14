@@ -70,4 +70,7 @@ gem 'jquery-rails'
 gem 'pry-byebug'
 gem 'acts-as-taggable-on', github: 'mbleigh/acts-as-taggable-on', branch: 'master'
 
-gem 'rake', '< 11.0'
+gem 'dotenv-rails'
+group :production do
+  gem 'mysql2'
+end
