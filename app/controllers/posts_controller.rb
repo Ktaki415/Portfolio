@@ -44,4 +44,12 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:title, :body)
   end
+
+  def ensure_correct_user
+    @post = Post.find(params[:id])
+    unless @post.user == current_user
+      flash[:notice] = "権限がありません"
+      redirect_to posts_path
+    end
+  end
 end
