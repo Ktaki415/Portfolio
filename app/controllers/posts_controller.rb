@@ -4,7 +4,7 @@ class PostsController < ApplicationController
 
   def index
   	@posts = Post.all
-  	@post = Post.new
+  	@post_new = Post.new
   end
 
   def show
@@ -36,13 +36,13 @@ class PostsController < ApplicationController
 
   def destroy
   	@post.destroy
-  	redirect_to posts_path
+  	redirect_to user_path(current_user)
   end
 
   private
 
   def post_params
-    params.require(:post).permit(:title, :body)
+    params.require(:post).permit(:title, :body, :image)
   end
 
   def ensure_correct_user
