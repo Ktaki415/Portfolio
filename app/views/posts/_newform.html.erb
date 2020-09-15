@@ -1,4 +1,9 @@
 <%= form_for(post) do |f| %>
+
+	<div class="image row">
+		<%= f.attachment_field :image %>
+	</div>
+
 	<div class="field row">
 		<%= f.label :title %>
 		<%= f.text_field :title, class: "col-xs-12 post_title" %>
@@ -12,4 +17,5 @@
 	<div class="actions row">
 		<%= f.submit class: "btn btn-primary col-xs-12" %>
 	</div>
+
 <% end %>
