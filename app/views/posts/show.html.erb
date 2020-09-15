@@ -28,6 +28,13 @@
 					<th><label>内容</label></th>
 					<td><%= @post.body %></td>
 				</tr>
+
+				<!-- いいね機能ここから -->
+				<tr>
+				   <td><%= render 'favorites/favorite', post: @post %></td>
+				</tr>
+				<!-- いいね機能ここまで -->
+
 				<tr>
 					<% if @post.user == current_user %>
 						<td><%= link_to "Edit", edit_post_path(@post), class: "btn-sm btn-success edit_post_#{@post.id}" %></td>

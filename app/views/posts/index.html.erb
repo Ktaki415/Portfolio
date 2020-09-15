@@ -31,6 +31,12 @@
 					</td>
 					<td><%= link_to post.title, post_path(post), class: "post_#{post.id}" %></td>
 					<td><%= post.body %></td>
+
+					<!-- いいね機能ここから -->
+					<td>
+						<%= render 'favorites/favorite', post: post %>
+					</td>
+					<!-- いいね機能ここまで -->
 				</tr>
 				<% end %>
 			</tbody>
