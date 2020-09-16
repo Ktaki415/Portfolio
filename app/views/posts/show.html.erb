@@ -28,13 +28,11 @@
 					<th><label>内容</label></th>
 					<td><%= @post.body %></td>
 				</tr>
-
-				<!-- いいね機能ここから -->
 				<tr>
+					<!-- いいね機能 -->
 				   <td><%= render 'favorites/favorite', post: @post %></td>
+				   <td>コメント数:<%= @post.post_comments.count %></td>
 				</tr>
-				<!-- いいね機能ここまで -->
-
 				<tr>
 					<% if @post.user == current_user %>
 						<td><%= link_to "Edit", edit_post_path(@post), class: "btn-sm btn-success edit_post_#{@post.id}" %></td>
@@ -44,6 +42,30 @@
 			</div>
 		</table>
 		</div>
+
+		<!-- コメント一覧・機能 -->
+		<table>
+		<% @post_comments.each do |post_comment| %>
+			<tr>
+				<td>
+					<%= link_to (attachment_image_tag post_comment.user, :profile_image, :fill, 60, 60, format: 'jpeg', class: "pull-left :profile-img", fallback: "no_image.jpg"), user_path(@post.user) %>
+				</td>
+				<td><%= post_comment.comment %></td>
+				<% if current_user == post_comment.user %>
+					<td>
+						<%= link_to "Destroy", post_post_comment_path(@post, post_comment), method: :DELETE, class: 'btn btn-danger btn-xs pull-right' %>
+					</td>
+				<% end %>
+			</tr>
+		<% end %>
+		</table>
+
+		<div class="comment-form col-xs-10">
+			<%= form_for [@post, @post_comment] do |f| %>
+				<%= f.text_area :comment, rows:'5', class: "form-control" %>
+				<%= f.submit '送信', class: "btn btn-sm btn-base-1 mt-20 pull-right" %>
+			<% end %>
+		</div>
+
 	</div>
 </div>
-
