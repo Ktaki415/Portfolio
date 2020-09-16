@@ -32,11 +32,9 @@
 					<td><%= link_to post.title, post_path(post), class: "post_#{post.id}" %></td>
 					<td><%= post.body %></td>
 
-					<!-- いいね機能ここから -->
-					<td>
-						<%= render 'favorites/favorite', post: post %>
-					</td>
-					<!-- いいね機能ここまで -->
+					<!-- いいね機能 -->
+					<td><%= render 'favorites/favorite', post: post %></td>
+					<td>コメント数:<%= post.post_comments.count %></td>
 				</tr>
 				<% end %>
 			</tbody>

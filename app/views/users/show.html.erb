@@ -4,7 +4,7 @@
 		<%= render 'users/profile', user: @user %>
 
 		<h2>New post</h2>
-		<%= render 'posts/newform', post: @post %>
+		<%= render 'posts/newform', post: @post_new %>
 	</div>
 	<div class="col-xs-9">
 		<h2>Posts</h2>
@@ -28,6 +28,7 @@
 					</td>
 					<td><%= link_to post.title, post_path(post), class: "post_#{post.id}" %></td>
 					<td><%= post.body %></td>
+					<td>コメント数:<%= post.post_comments.count %></td>
 				</tr>
 				<% end %>
 			</tbody>
