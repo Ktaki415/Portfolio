@@ -30,7 +30,11 @@
 				</tr>
 				<tr>
 					<!-- いいね機能 -->
-				   <td><%= render 'favorites/favorite', post: @post %></td>
+				   <td>
+					   	<div id="favorites_buttons_<%= @post.id %>">
+					   		<%= render partial: 'favorites/favorite', locals: { post: @post} %>
+					   	</div>
+				   	</td>
 				   <td>コメント数:<%= @post.post_comments.count %></td>
 				</tr>
 				<tr>
