@@ -9,10 +9,11 @@ Rails.application.routes.draw do
   get 'home/about'
 
   resources :users, only: [:show, :index, :edit, :update] do
-    resources :relationships, only: [:create, :destroy]
-    get "followings" => "relationships#followings", as: "followings"
+    resource :relationships, only: [:create, :destroy]
+    get "followings" => "relationships#following", as: "followings"
     get "followers" => "relationships#followers", as: "followers"
   end
+
   resources :posts do
     resources :post_comments, only: [:create, :destroy]
     resources :favorites, only: [:create, :destroy]

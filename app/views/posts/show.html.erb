@@ -11,7 +11,7 @@
 
 		<div class="row" style="margin-top: 60px;">
 			<div class="col-xs-8">
-				<%= attachment_image_tag @post, :image, :fill, 250, 250 %>
+				<%= attachment_image_tag @post, :image, :fill, 330, 330 %>
 			</div>
 
 		<table>
@@ -43,29 +43,32 @@
 		</table>
 		</div>
 
-		<!-- コメント一覧・機能 -->
-		<table>
-		<% @post_comments.each do |post_comment| %>
-			<tr>
-				<td>
-					<%= link_to (attachment_image_tag post_comment.user, :profile_image, :fill, 60, 60, format: 'jpeg', class: "pull-left :profile-img", fallback: "no_image.jpg"), user_path(@post.user) %>
-				</td>
-				<td><%= post_comment.comment %></td>
-				<% if current_user == post_comment.user %>
+		<div class="row">
+		<div class="comment col-xs-10 col-xs-offset-1">
+			<!-- コメント一覧・機能 -->
+			<table>
+			<% @post_comments.each do |post_comment| %>
+				<tr>
 					<td>
-						<%= link_to "Destroy", post_post_comment_path(@post, post_comment), method: :DELETE, class: 'btn btn-danger btn-xs pull-right' %>
+						<%= link_to (attachment_image_tag post_comment.user, :profile_image, :fill, 50, 50, format: 'jpeg', class: "pull-left :profile-img", fallback: "no_image.jpg"), user_path(@post.user) %>
 					</td>
-				<% end %>
-			</tr>
-		<% end %>
-		</table>
-
-		<div class="comment-form col-xs-10">
-			<%= form_for [@post, @post_comment] do |f| %>
-				<%= f.text_area :comment, rows:'5', class: "form-control" %>
-				<%= f.submit '送信', class: "btn btn-sm btn-base-1 mt-20 pull-right" %>
+					<td><%= post_comment.comment %></td>
+					<% if current_user == post_comment.user %>
+						<td>
+							<%= link_to "Destroy", post_post_comment_path(@post, post_comment), method: :DELETE, class: 'btn btn-danger btn-xs pull-right' %>
+						</td>
+					<% end %>
+				</tr>
 			<% end %>
-		</div>
+			</table>
 
+			<div class="comment-form">
+				<%= form_for [@post, @post_comment] do |f| %>
+					<%= f.text_area :comment, rows:'5', class: "form-control" %>
+					<%= f.submit '送信', class: "btn btn-sm btn-base-1 mt-20 pull-right" %>
+				<% end %>
+			</div>
+		</div>
+		</div>
 	</div>
 </div>

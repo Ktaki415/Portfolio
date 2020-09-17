@@ -13,14 +13,24 @@ class User < ApplicationRecord
 
   attachment :profile_image, destroy: false
 
-  has_many :following, class_name: "Relationship", foreign_key: "following_id"
+  has_many :following, class_name: "Relationship", foreign_key: "follower_id"
   has_many :following_user, through: :following, source: :following #自分がフォローしている人
-  has_many :follower, class_name: "Relationship", foreign_key: "follower_id"
+  has_many :follower, class_name: "Relationship", foreign_key: "following_id"
   has_many :follower_user, through: :follower, source: :follower #自分をフォローしている人(フォロワー)
+
+  # ユーザーをフォローする
+  def follow(user_id)
+    following.create(following_id: user_id)
+  end
+
+  # ユーザーのフォローを外す
+  def unfollow(user_id)
+    following.find_by(following_id: user_id).destroy
+  end
 
   # フォローしていたらtrueを返す
   def followed?(user)
-  	followed_user.include?(user)
+    following_user.include?(user)
   end
 
   validates :name, length: {maximum: 20, minimum: 2}, uniqueness: true
