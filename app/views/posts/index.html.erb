@@ -39,6 +39,9 @@
 						</div>
 					</td>
 					<td>コメント数:<%= post.post_comments.count %></td>
+
+					<!-- タグ機能 -->
+					<td><%= render partial: 'posts/tag_list', locals: { tag_lists: post.tag_list } %></td>
 				</tr>
 				<% end %>
 			</tbody>

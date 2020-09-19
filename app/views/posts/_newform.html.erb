@@ -4,6 +4,11 @@
 		<%= f.attachment_field :image %>
 	</div>
 
+	<div class="tag row">
+		<%= f.label :tag_list, "タグをカンマ区切りで入力" %>
+		<%= text_field_tag "post[tag_list]", post.tag_list, :class => "form-control" %>
+	</div>
+
 	<div class="field row">
 		<%= f.label :title %>
 		<%= f.text_field :title, class: "col-xs-12 post_title" %>

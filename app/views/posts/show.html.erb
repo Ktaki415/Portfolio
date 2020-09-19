@@ -28,14 +28,20 @@
 					<th><label>内容</label></th>
 					<td><%= @post.body %></td>
 				</tr>
+				<!-- いいね機能 -->
 				<tr>
-					<!-- いいね機能 -->
 				   <td>
 					   	<div id="favorites_buttons_<%= @post.id %>">
 					   		<%= render partial: 'favorites/favorite', locals: { post: @post} %>
 					   	</div>
 				   	</td>
 				   <td>コメント数:<%= @post.post_comments.count %></td>
+				</tr>
+				<!-- タグ機能 -->
+				<tr>
+					<td>
+						<%= render partial: 'posts/tag_list', locals: { tag_lists: @post.tag_list } %>
+					</td>
 				</tr>
 				<tr>
 					<% if @post.user == current_user %>
