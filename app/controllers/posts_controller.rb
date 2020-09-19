@@ -44,6 +44,11 @@ class PostsController < ApplicationController
   	redirect_to user_path(current_user)
   end
 
+  def search
+    #Viewのformで取得したパラメータをモデルに渡す
+    @posts = Post.search(params[:search])
+  end
+
   private
 
   def post_params
