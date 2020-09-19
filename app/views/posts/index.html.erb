@@ -4,19 +4,19 @@
 		<h2>User info</h2>
 		<%= render 'users/profile', user: current_user %>
 
-		<h2>New post</h2>
+		<h2>新しい投稿</h2>
 		<%= render 'posts/newform', post: @post_new %>
 
 	</div>
 
 	<div class="col-xs-9">
-		<h2>Posts index</h2>
+		<h2>投稿一覧</h2>
 		<table class="table table-hover table-inverse">
 			<thead>
 				<tr>
 					<th></th>
-					<th>Title</th>
-					<th>Opinion</th>
+					<th>タイトル</th>
+					<th>内容</th>
 					<th colspan="3"></th>
 				</tr>
 			</thead>

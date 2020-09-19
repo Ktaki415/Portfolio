@@ -36,6 +36,12 @@
 
       </div>
     </header>
+    <div class="search-form" style="margin-top: 70px; text-align: center;">
+      <%= form_tag(search_path, :method => 'get') do %>
+        <%= text_field_tag :search %>
+        <%= submit_tag '記事を検索', :name => nil %>
+      <% end %>
+    </div>
     <div class="container">
       <div class="row">
       <p id="notice"><%= notice %></p>
