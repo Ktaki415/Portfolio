@@ -1,26 +1,32 @@
 <div class="row">
-	<h2>User info</h2>
-	<%= form_for(@user) do |f| %>
-	<table class="row">
-		<tr>
-			<th><%= f.label :name %></th>
-			<td><%= f.text_field :name, class: "name" %></td>
-		</tr>
+	<div class="col-xs-6 col-xs-offset-3">
 
-		<tr>
-			<th><%= f.label :image %></th>
-			<td><%= f.attachment_field :profile_image, class: "user_image" %></td>
-		</tr>
+		<div class="row">
+			<h2>User info</h2>
+			<%= form_for(@user) do |f| %>
+			<table class="row">
+				<tr>
+					<th><%= f.label :name %></th>
+					<td><%= f.text_field :name, class: "name" %></td>
+				</tr>
 
-		<tr>
-			<th><%= f.label :introduction %></th>
-			<td><%= f.text_area :introduction, class: "introduction" %></td>
-		</tr>
+				<tr>
+					<th><%= f.label :image %></th>
+					<td><%= f.attachment_field :profile_image, class: "user_image" %></td>
+				</tr>
 
-		<tr>
-			<th><%= f.submit "Save", class: "btn-primary" %></th>
-		</tr>
-	</table>
+				<tr>
+					<th><%= f.label :introduction %></th>
+					<td><%= f.text_area :introduction, class: "introduction" %></td>
+				</tr>
 
-	<% end %>
+				<tr>
+					<th><%= f.submit "Save", class: "btn-primary" %></th>
+				</tr>
+			</table>
+
+			<% end %>
+		</div>
+
+	</div>
 </div>
