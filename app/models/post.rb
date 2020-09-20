@@ -8,6 +8,7 @@ class Post < ApplicationRecord
 
 	validates :title, presence: true
 	validates :body, presence: true
+	validates :start_time, presence: true
 
 	# すでにいいねしたかどうかを判断する
 	def favorited_by?(user)

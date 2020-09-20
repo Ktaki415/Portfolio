@@ -9,6 +9,11 @@
 		<%= text_field_tag "post[tag_list]", post.tag_list, :class => "form-control" %>
 	</div>
 
+	<div class="time row">
+		<%= f.label :start_time, "日付" %>
+		<%= f.datetime_select :start_time %>
+	</div>
+
 	<div class="field row">
 		<%= f.label :title %>
 		<%= f.text_field :title, class: "col-xs-12 post_title" %>

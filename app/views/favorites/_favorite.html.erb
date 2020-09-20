@@ -1,10 +1,10 @@
 <% if post.favorited_by?(current_user) %>
 	<%= link_to post_favorite_path(post.id, post.favorites.find_by(user_id: current_user.id)), method: :DELETE, remote: true do %>
 	<!-- 記事のid,「いいね」のid,「いいね」したcurrent_userのidを取得 -->
-		<span class="glyphicon glyphicon-heart"><%= post.favorites.count %></span>
+		<span class="glyphicon glyphicon-heart" style="color: red"><%= post.favorites.count %></span>
 	<% end %>
 <% else %>
 	<%= link_to post_favorites_path(post.id), method: :POST, remote: true do %>
-		<span class="glyphicon glyphicon-heart-empty"><%= post.favorites.count %></span>
+		<span class="glyphicon glyphicon-heart-empty" style="color: red"><%= post.favorites.count %></span>
 	<% end %>
 <% end %>
