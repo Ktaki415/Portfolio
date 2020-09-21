@@ -36,6 +36,8 @@
 			</tbody>
 		</table>
 
+		<div class="pages text-center"><%= paginate(@posts) %></div>
+
 		<div class="calendar">
 			<%= month_calendar events: @posts do |date, posts| %>
 				<%= date.day %>

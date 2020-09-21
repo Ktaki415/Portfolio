@@ -18,7 +18,11 @@
 			<div class="col-xs-4">
 				<tr>
 					<th><label>ユーザー名</label></th>
-					<td><%= @post.user.name %></td>
+					<td>
+						<%= link_to user_path(@post.user) do %>
+						<%= @post.user.name %>
+						<% end %>
+					</td>
 				</tr>
 				<tr>
 					<th><label>タイトル</label></th>

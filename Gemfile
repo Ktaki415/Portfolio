@@ -76,3 +76,5 @@ group :production do
 end
 
 gem 'simple_calendar', '~> 2.0'
+
+gem 'kaminari','~> 1.2.1'

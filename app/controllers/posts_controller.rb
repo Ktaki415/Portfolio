@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   before_action :ensure_correct_user, only: [:edit, :update, :destroy]
 
   def index
-  	@posts = Post.all
+  	@posts = Post.page(params[:page]).reverse_order
   	@post_new = Post.new
     if params[:tag_name]
       @posts = Post.tagged_with("#{params[:tag_name]}")
@@ -47,6 +47,7 @@ class PostsController < ApplicationController
   def search
     #Viewのformで取得したパラメータをモデルに渡す
     @posts = Post.search(params[:search])
+    @posts = @posts.page(params[:page])
   end
 
   private
