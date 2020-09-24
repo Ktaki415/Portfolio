@@ -1,17 +1,18 @@
+<div class="container">
 <div class="row">
-	<div class="col-xs-3">
+	<div class="col-xs-4">
 		<h3>User info</h3>
 		<%= render 'users/profile', user: current_user %>
 
 		<h3>New Form</h3>
 		<%= render 'posts/newform', post: @post_new %>
 	</div>
-	<div class="col-xs-9">
-		<h2>Users</h2>
+	<div class="col-xs-8">
+		<h2 class="text-center">Users</h2>
 		<!--users一覧 -->
 		<%= render 'index',users: @users %>
 		<!--users一覧 -->
 	</div>
 	<div class="page text-center"><%= paginate(@users) %></div>
 </div>
-
+</div>

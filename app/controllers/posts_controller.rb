@@ -1,5 +1,4 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!
   before_action :ensure_correct_user, only: [:edit, :update, :destroy]
 
   def index
@@ -7,6 +6,8 @@ class PostsController < ApplicationController
   	@post_new = Post.new
     if params[:tag_name]
       @posts = Post.tagged_with("#{params[:tag_name]}")
+      @posts = @posts.page(params[:page])
+    # binding.pry
     end
   end
 
