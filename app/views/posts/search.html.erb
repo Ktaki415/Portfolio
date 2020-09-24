@@ -1,7 +1,8 @@
+<div class="container">
 <div class="row">
 	<div class="col-xs-8 col-xs-offset-2">
 
-	<h2>検索結果</h2>
+	<h2 class="text-center">検索結果</h2>
 	<table class="table table-hover table-inverse">
 		<thead>
 			<tr>
@@ -17,7 +18,7 @@
 			<tr>
 				<td>
 					<%= link_to user_path(post.user) do %>
-					<%= attachment_image_tag(post.user, :profile_image, :fill, 50, 50, fallback: "no-image-mini.jpg") %>
+					<%= attachment_image_tag(post, :image, :fill, 100, 100, fallback: "no-image-mini.jpg") %>
 					<% end %>
 				</td>
 				<td><%= link_to post.title, post_path(post), class: "post_#{post.id}" %></td>
@@ -37,5 +38,6 @@
 		</tbody>
 	</table>
 	<div class="pages text-center"><%= paginate(@posts) %></div>
+	</div>
 </div>
 </div>

@@ -18,7 +18,14 @@
 @import "bootstrap";
 
 header {
-  color:white;
+  font-family: 'Cabin', sans-serif;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+.navbar {
+  background-color: rgba(255, 215, 0, 1);
+  color: rgba(0, 0, 128, 1);
+  border-bottom-width: 3px dotted midnightblue;
 }
 
 header .navbar-right span {
@@ -28,8 +35,34 @@ header .navbar-right span {
 
 body {
   margin-top: 40px;
+  background-color: rgba(255, 250, 240, 1);
+  background-image: image-url("hoge.jpg");
+  font-family: 'Cabin', sans-serif;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
 }
 
-body {
-  background-image: image-url("hoge.jpg");
+.top {
+}
+
+.top-content {
+  width: 100%;
+  height: 750px;
+  background-image: image-url("top-image3.jpg");
+  background-size: cover;
+  background-position: center;
+  background-color:rgba(255,255,255,0.2);
+  background-blend-mode:lighten;
+}
+
+.top-message {
+  height: 300px;
+  width: 600px;
+  margin: auto;
+  padding-top: 200px;
+  font-size: 20px;
+  color: white;
+}
+
+.simple-calendar table {
+  background-color: white;
 }
