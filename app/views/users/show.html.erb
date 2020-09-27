@@ -25,7 +25,7 @@
 				<tr>
 					<td>
 						<%= link_to user_path(post.user) do %>
-						<%= attachment_image_tag(post.user, :profile_image, :fill, 50, 50, fallback: "no-image-mini.jpg") %>
+						<%= attachment_image_tag(post, :profile_image, :fill, 70, 70, fallback: "no-image-mini.jpg") %>
 						<% end %>
 					</td>
 					<td><%= post.start_time.strftime("%Y-%m-%d %H:%M") %></td>
