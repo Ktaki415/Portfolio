@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @posts = @user.posts
-    @posts = @posts.page(params[:page])
+    @posts = @posts.order("created_at DESC").page(params[:page])
     @post_new = Post.new
   end
 
