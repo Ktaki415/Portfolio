@@ -20,7 +20,8 @@ SNSサービスに慣れている一般ユーザ
 ### 主な利用シーン
 ペットの行動を記録したいと思った時  
 
-## 設計書
+## 設計書  
+  
 
 ### 機能一覧
 https://docs.google.com/spreadsheets/d/1vmbKYbnCYCoOAjOL2_V23Fube7HE1JtVsewO8p_BIDE/edit?usp=sharing
