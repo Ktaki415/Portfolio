@@ -21,7 +21,18 @@ SNSサービスに慣れている一般ユーザ
 ペットの行動を記録したいと思った時  
 
 ## 設計書  
+テーブル定義書  
+https://docs.google.com/spreadsheets/d/1PqrgGd-kJ1oiy-Wmpk7BB6-hdWaLmzJ3RSv0vM852FI/edit?usp=sharing  
   
+詳細設計書  
+https://docs.google.com/spreadsheets/d/1pvHYoFUJInL-kgzJtxn-A3Aba3ZjZA19FFgfZqyzUCQ/edit?usp=sharing
+  
+AWS インフラ設計書  
+https://docs.google.com/spreadsheets/d/1wXqzqE44dwdp8-cgK2UhwtmS0FfT-M1VcT9xNBgJzNk/edit?usp=sharing  
+  
+AWS システム構成図  
+※閲覧にはdraw.ioが必要です  
+https://app.diagrams.net/#G1oQ1aVvVYydV23KpKFQM8p5Qo1vWrd3uB  
 
 ### 機能一覧
 https://docs.google.com/spreadsheets/d/1vmbKYbnCYCoOAjOL2_V23Fube7HE1JtVsewO8p_BIDE/edit?usp=sharing
