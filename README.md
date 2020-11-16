@@ -34,7 +34,7 @@ AWS システム構成図
 ※閲覧にはdraw.ioが必要です  
 https://app.diagrams.net/#G1oQ1aVvVYydV23KpKFQM8p5Qo1vWrd3uB  
 
-### 機能一覧
+## 機能一覧
 https://docs.google.com/spreadsheets/d/1vmbKYbnCYCoOAjOL2_V23Fube7HE1JtVsewO8p_BIDE/edit?usp=sharing
 
 ## 開発環境
